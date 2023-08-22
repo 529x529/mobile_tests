@@ -12,7 +12,7 @@ public interface BrowserstackConfig extends Config {
     String getUser();
 
     @Key("key")
-    @DefaultValue("hGQgUeXoCesCtPeoi7K")
+    @DefaultValue("ohGQgUeXoCesCtPeoi7K")
     String getKey();
 
     @Key("baseUrl")
