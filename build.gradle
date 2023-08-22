@@ -47,6 +47,7 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -63,7 +64,13 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-test {
-    useJUnitPlatform()
-    systemProperties(System.getProperties())
+task android_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("android")
+    }
+}
+task ios_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("ios")
+    }
 }
