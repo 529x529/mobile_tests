@@ -15,7 +15,6 @@ public class SearchTests extends TestBase {
 
 
     @Test
-    @Tag("android")
     void successfulSearchTest() {
         step("Ввод поискового запроса", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
@@ -27,7 +26,6 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Tag("android")
     void checkErrorTest() {
         step("Ввод поискового запроса", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
@@ -42,18 +40,5 @@ public class SearchTests extends TestBase {
         $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_button")).shouldBe(visible);
         $(AppiumBy.id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldHave(text("An error occurred"));
         });
-    }
-
-    @Test
-    @Tag("ios")
-    void sampleTest() {
-        step("Переход на форму ввода текста", () ->
-                $(AppiumBy.accessibilityId("Text Button")).click());
-        step("Ввод текста и его отправка", () -> {
-            $(AppiumBy.accessibilityId("Text Input")).sendKeys("Текст");
-            $(AppiumBy.accessibilityId("Text Input")).pressEnter();
-        });
-        step("Проверка отображения введенного текста", () ->
-                $(AppiumBy.accessibilityId("Text Output")).shouldHave(text("Текст")));
     }
 }
