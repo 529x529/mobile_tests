@@ -63,8 +63,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-task android_test(type: Test) {
-    useJUnitPlatform{
-        includeTags("android")
-    }
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
