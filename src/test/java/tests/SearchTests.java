@@ -35,7 +35,7 @@ public class SearchTests extends TestBase {
         });
 
         step("Переход на страницу Appium", () -> {
-            $$(AppiumBy.id("org.wikipedia.alpha:id/search_container")).first().click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_container")).first().click();
         });
 
         step("Проверка страницы", () -> {
